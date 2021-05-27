@@ -1,24 +1,8 @@
-# [ESP-IDF](https://www.espressif.com/en/products/sdks/esp-idf)
+# [ESP-IDF](https://www.espressif.com/en/products/sdks/esp-idf):
 
-## Why I am writing this?
-After spending couple of weeks, i found that there are too many confusions in setting up
-ESP-IDF on internet, particularly for MAC users. The official procedure seems more clear,
-with very minor deviations. However, The official documentation tries to cover all three OS,
-Windows, MacOS and Linux which leads to some confusion as the steps are similar for both
-MacOS and Linux.
 
-When you encounter any issue and google for solution, it gives solution that is applicable for
-different versions, without tagging any version. This adds confusion. For example,
-* Should I install the xtensa toolchain myself?
-* Do you need to install kconfig-frontends or not?
-* what environment variable to use?
+**Created from my notes while setting up environment for working on `M5Stack C`**
 
-It seems like the official version has already solved most of the problem and made the installation much simpler.
-
-I found answers for such questions, after going through the steps repeatedly, and found the MINIMUM
-steps required to work on ESP-IDF on MacOS.
-
----
 This page explains how to install [ESP-IDF from github][1] and setup it to build
 and run the projects. Focus is on to setup it from terminal.
 
@@ -29,12 +13,12 @@ Most of the documentations are up to date for Linux, while lagging on MacOS.
 ## Important Notes
 
 * Decide on which version to start with from [here][2]. This decision is based
-on which chip you have. I am using ESP32. Other available chips as on **May 2021**
-are ESP32 S2 and ESP32 C3.
-* Refer [ESP-IDF Programming Guide][3] for up to date info
+on which chip you have. I am using ESP32. Other available chips as
+on **May 2021** are ESP32 S2 and ESP32 C3.
+* Refer [ESP-IDF Programming Guide][3] for up to date info. It is simple to
+  follow
 * The info in this page are tested on [M5Stack C]
-* This procedure is for MacOS 11.3.1.
-
+* This procedure is for `MacOS 11.3.1 ESP-IDF v4.2.1`
 
 ## Steps
   Switch to bash terminal, if you are in zsh. Most of the steps we use
