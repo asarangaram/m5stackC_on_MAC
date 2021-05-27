@@ -137,23 +137,24 @@ on **May 2021** are ESP32 S2 and ESP32 C3.
   cd ~/esp/workdir
   cp -rf $IDF_PATH/examples/get-started/hello_world ./
   cd hello_world
-  idf.py menuconfig
+  $ make # This opens menu, once you update and save, it builds.
+  ```
+  Update the following in the menu.
+  ```
+  Serial flasher config  ---> Default serial port : /dev/cu.usbserial-5952CA19FA
+  Serial flasher config  ---> Default baud rate : Other baud rate
+  Other baud rate value  --> 150000
   ```
 
-  This menuconfig is default, and may not really the final one. So, Don't
-  Modify anything. We only verify the build system
+  On completion, this prints the step for flashing. Note, the port and
+  baud rate are already updated correctly.
 
   ```bash
-  idf.py build
+  $ make flash
+  $ make monitor # Remember you need to press Ctrl+] to quit.
   ```
 
-  Once the build completes, it will end with instruction for flashing.
-  We can't copy paste the command instead, we need to edit to update
-  the port and baud rate to the device we have.
-
-  /Users/work/.espressif/python_env/idf4.2_py3.9_env/bin/python ../../components/esptool_py/esptool/esptool.py **-p /dev/tty.usbserial-5952CA19FA  -b 150000** --before default_reset --after hard_reset --chip esp32  write_flash --flash_mode dio --flash_size detect --flash_freq 40m 0x1000 build/bootloader/bootloader.bin 0x8000 build/partition_table/partition-table.bin 0x10000 build/hello-world.bin
-
-  Now open a Serial port Monitor. Remember you need to press Ctrl+] to quit.
+  Serial port Monitor shows the following repeatedly.
 
   ```bash
   $ idf.py monitor -p /dev/tty.usbserial-5952CA19FA  
