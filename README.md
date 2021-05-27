@@ -1,6 +1,6 @@
 # m5stackC_on_MAC
 
-Contiains notes from my work with `M5Stack C` as Tutorial.
+Contains notes from my work with `M5Stack C` as Tutorial.
 
 
 Materials used:
