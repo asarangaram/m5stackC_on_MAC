@@ -129,7 +129,7 @@ on **May 2021** are ESP32 S2 and ESP32 C3.
   $ source $IDF_PATH/export.sh
   ```
 
-### Verify
+### Verify (Hello World example)
   Now to confirm that the tools works as expect, let us compile a example program.
 
   ```bash
@@ -230,10 +230,15 @@ on **May 2021** are ESP32 S2 and ESP32 C3.
   Restarting in 7 seconds...
   Restarting in 6 seconds...
   ```
-
   This confirms that the hello world works correctly on the ESP32 device.
-  you don't see anything on the onboard display as it is not used in this
-  example project.
+
+### Verify (Blink)
+  On the Hello World program, we need to use serial port UART monitor to confirm that the application is running. You don't see any output in the onboard
+  display. You may use blink example to to trigger the RED LED 
+  (on the device) by configuring GPIO10 as LED port.
+  
+  on successful flashing, you will see the LED blinks
+  ON/OFF with 1 sec interval.
 
   Next session, lets explore more examples.
 
